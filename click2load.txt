@@ -53,9 +53,6 @@
 ||view.genial.ly$3p,frame,redirect=click2load.html
 ||volume.vox-cdn.com/embed/$3p,frame,redirect=click2load.html
 ||w.soundcloud.com/player/$3p,frame,redirect=click2load.html
-!||youtube-nocookie.com^$3p,frame,redirect=click2load.html,domain=~bing.com|~google.com|~duckduckgo.com|~video.search.yahoo.com
-||youtube-nocookie.com/embed^$3p,frame,redirect=click2load.html,domain=~bing.com|~google.com|~duckduckgo.com|~video.search.yahoo.com
-||youtube.com^$3p,frame,redirect=click2load.html,domain=~bing.com|~google.com|~duckduckgo.com|~video.search.yahoo.com
 !#endif
 
 !!! DO NOT BLOCK
