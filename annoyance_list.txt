@@ -3,9 +3,37 @@
 ! Description: Hide annoyances and extraneous page elements ("related articles", "read more", etc.) not covered by other lists
 ! Homepage: https://github.com/yokoffing/filterlists
 ! Expires: 4 days (update frequency)
-! Version: 23 September 2023
+! Version: 21 November 2023b
 ! Syntax: AdBlock
 
+blocknews.com##.theiaStickySidebar, .jnews_related_post_container
+whatsoftware.com##.commentlist, .comment-respond, .yarpp-related-website.yarpp-related.yarpp
+vocabulary.com##.vocab-trainer-background
+washingtonpost.com##.hide-for-print
+returnbyte.com##.clearfix.sidebar.widget-area, .post-navigation, .featured-related-posts, .widget-title, .comments-area
+wired.com##.callout--has-top-border
+whonix.org###fly-in-notification-panel
+emojipedia.org##.mt-6.gap-6.flex-col.flex
+pcwrt.com##[href="https://shop.pcwrt.com/"]
+portswigger.net##.sidebar-content, .footer
+robokiller.com##.blog-cta-1, .blog-cta-2, .w-richtext-align-fullwidth.w-richtext-figure-type-image
+skyscanner.com##.UnpricedBrandInline_link__YmFhN > .BpkTicket_bpk-ticket__NzNiO, .PriceAlertsBanner_banner__M2E0M.BpkCard_bpk-card--padded__OTI5O.BpkCard_bpk-card--atomic-button__YWFjM.BpkCard_bpk-card__NTJiY, .InlineHotelsBanner_inlineHotelsBannerContainer__Nzc5Z
+jetblue.com##.jtpcars-list
+tmz.com##.media-list, .sidebar, .js-track-link.image-block__link.media-link
+pressplay.top##.btn-block
+apnews.com##.Enhancement
+adweek.com##.widget-popular, .section--teaser_partners--horizontal.section--teaser_partners.section--teaser.section
+jamiesawyer336.com##.social-links, .subscribe-form
+pureinfotech.com##.top-share-buttons
+techtarget.com##.cluster-branding-container, .cluster-download, .cluster-callout-right, .show.download-button, .desktop-resources-bar.resources-bar
+tomsguide.com##.hawk-main-editorial-container
+forbes.com##.link-embed.color-body-border.color-body.embed-base
+citationmachine.net###--ucf-upload-widget-modal-container
+grammarist.com##.inside-right-sidebar, div.wp-block-column-is-layout-flow.is-layout-flow.wp-block-column
+tomshardware.com##.hawk-main-editorial-container
+macrumors.com##.noskim
+infoworld.com##h4, .end-note
+techreviewteam.com##.wp-widget-group__inner-blocks
 medium.com##.adm.adl.abi.m, .bg.adn.abg.adp
 innotechtoday.com##.elementor-element-aff5945.elementor-element.elementor-top-column.elementor-col-100.elementor-column.has_eae_slider > .elementor-element-populated.elementor-widget-wrap, .sticky-column, .elementor-widget-heading.elementor-widget.elementor-element-e95e952.elementor-element > .elementor-widget-container
 androidauthority.com##.-___sc
@@ -510,7 +538,6 @@ theguardian.com###e4675c50-1165-4a45-b442-b960d1590dd7, most-viewed-right, .dcr-
 thehackernews.com##.right-box, .cf.below-post-box, .sharebelow-comment > .show-comments, .note-b
 thehill.com##.sidebar.column.region-sidebar-second.region, .es_recommended_content.incontent_widgets
 thehill.com##.thehill-promo-link
-theintercept.com###3p--homepage-banner, .Cta-content
 thelineofbestfit.com##.related-section > .gutter-wrapper, .reviews-section > .layout-wrap, .feature-signup, .signup-sidebar.sidebar-section
 them.us##.callout--has-top-border
 themarkup.org##.article-card--right.article-card--has-image.article-card, .article-footer-titles, .print-hidden.article-footer__latest
@@ -661,6 +688,8 @@ kellegram.xyz##.socials
 ||redvideo.io^$domain=~redvideo.io
 !||cnevids.com^$3p,domain=~gq.com
 ||kaltura.com^$3p,domain=~financialaidtv.com
+! https://github.com/yokoffing/filterlists/issues/117
+@@||cdnapi-legacy.kaltura.com^$xhr,domain=yle.fi
 ! https://www.appdate.lk/technology/2023-browser-showdown/
 ||beyondwords.io^
 ||code.responsivevoice.org^
@@ -927,12 +956,19 @@ youtube.com##+js(set, ytInitialPlayerResponse.auxiliaryUi.messageRenderers.upsel
 youtube.com##+js(set, ytInitialData.overlay.upsellDialogRenderer.isVisible, false)
 youtube.com##+js(json-prune, [].playerResponse.auxiliaryUi.messageRenderers.upsellDialogRenderer)
 
+! YouTube delay on Firefox
+! https://www.ghacks.net/2023/11/20/youtube-video-loading-delayed-fix-inside/
+!#if env_firefox
+www.youtube.com##+js(nano-stb, resolve(1), 5000, 0.001)
+!#endif
+
 ! TWITTER
-! [Oct 2022] from https://www.reddit.com/r/uBlockOrigin/wiki/solutions/#wiki_twitter
+! [Nov 2023] from https://www.reddit.com/r/uBlockOrigin/wiki/solutions/#wiki_twitter
 ! My Timeline - no inserted sections (Who to follow/Topics to follow, etc.)
 twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label="Timeline: Your Home Timeline"] div[style^="transform: translateY"][style*="position: absolute;"]:not(:first-child:has-text(/^Show \d\d? Tweets?$/)):not(:has(article, [href^="/i/status/"], [role="progressbar"]))
 ! Other Timelines - no inserted sections (Who to follow/Topics to follow, etc.)
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label$="’s Tweets"] div[style^="transform: translateY"][style*="position: absolute;"]:not(:has(article, [href^="/i/status/"], [role="progressbar"]))
+twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label$="’s posts"] div[style^="transform: translateY"][style*="position: absolute;"]:not(:has(article, [href^="/i/status/"], [role="progressbar"]))
+
 ! [User] follows
 twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##article div>svg>g>[d^="M17.863 13.44c1.477"]:upward(article)
 ! Follow/Recommended Topic | "[Name of Topic] See more"
@@ -946,6 +982,8 @@ twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[dat
 twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label$="trending now" i]
 ! Sidebar - Who to follow/You might like
 twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label="who to follow" i]:upward(1)
+! Sidebar - Relevant people
+twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##[aria-label="relevant people" i]:upward(1)
 ! Login popup
 !twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##div#layers div[data-testid="sheetDialog"]:upward(div[role="group"][tabindex="0"])
 !twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##html:style(overflow: auto !important;)
@@ -960,6 +998,11 @@ twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##div[
 ! https://www.reddit.com/r/uBlockOrigin/comments/z73yk9/twitter_promoted_tweets_showing_up/
 twitter.com##[data-testid="tweet"]:has-text(/Promoted$/)
 
+! Linkedin
+! Suggested Posts
+! https://www.reddit.com/r/uBlockOrigin/comments/17yr4s5/blocking_linkedin_suggested_posts/
+linkedin.com##.relative:has-text(Suggested)
+
 ! Github
 ! Hide prompts to test copilot 
 github.com##react-app[app-name="react-code-view"] button[data-testid="copilot-popover-button"]
@@ -969,40 +1012,6 @@ github.com##.js-unwatch-suggestions
 ! Aggressive Fandom Wiki
 fandom.com##.wds-global-footer__main
 ! https://www.reddit.com/r/uBlockOrigin/comments/z0i6qy/aggressive_fandom_wiki_filter_set/
-fandom.com##.global-footer
-fandom.com##.mcf-wrapper
-fandom.com##.wikia-bar-anon.wikia-bar
-fandom.com##.global-navigation
-fandom.com##.page-side-edit.page-side-tool
-fandom.com##.render-wiki-recommendations
-fandom.com##.fandom-sticky-header
-fandom.com##.page-header__actions
-fandom.com##.page-header__categories
-fandom.com##.fandom-community-header__background
-fandom.com##.fandom-community-header__image
-fandom.com##.explore-menu.wds-dropdown
-fandom.com#$#.main-container { margin-left: 0 !important; width: 100% !important; }
-fandom.com##a[title="Discuss"]
-fandom.com##.unified-search__layout__right-rail
-fandom.com##.wikia-bar-collapse
-fandom.com#$#.community-header-wrapper { height: 1% !important;}
-fandom.com#$#.fandom-community-header__community-name { margin-top:10px !important; }
-fandom.com#$#.wds-tabs { margin-top:10px !important; }
-fandom.com#$#.fandom-community-header__top-container { padding-right: 10px !important; }
-fandom.com#$#.page-counter { margin-left: 9px !important; margin-top: 10px !important; }
-fandom.com#$#.fandom-community-header__top-container { white-space: nowrap !important; align-items: center !important; }
-fandom.com#$#.fandom-community-header__community-name { height: 100% !important; margin-right: 0 !important; }
-fandom.com#$#.wds-button-group { margin-top: 10px !important; }
-fandom.com#$#.search-modal::before { left: 0 !important; }
-fandom.com##a[title="UTC Clock"]
-fandom.com##.search-seeding
-fandom.com##.page__right-rail
-fandom.com##.page-header__top
-fandom.com###BackToTopBtn
-fandom.com##.highlight__sticky-container
-fandom.com##.notifications-placeholder
-fandom.com#$#.wds-dropdown__content { transform: translateX(-10%) !important; left: 0px !important;}
-!fandom.com##.highlight__sticky-container
 
 !!! NYT
 ! "To our Readers" note
