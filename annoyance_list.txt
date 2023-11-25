@@ -1056,4 +1056,3 @@ unsplash.com##img[src^="https://plus.unsplash.com/"]:upward(figure)
 !#endif
 
 !#include clean_reading_experience.txt
-!#include adult_annoyance_list.txt
