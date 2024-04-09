@@ -3,9 +3,14 @@
 ! Description: Hide annoyances and extraneous page elements ("related articles", "read more", etc.) not covered by other lists
 ! Homepage: https://github.com/yokoffing/filterlists
 ! Expires: 4 days (update frequency)
-! Version: 28 November 2023
+! Version: 27 February 2024
 ! Syntax: AdBlock
 
+dev.to##.popover-billboard.crayons-sponsorship, .crayons-sponsorship
+pymnts.com##.adContainer, .pymnt_ads, .recommended-articles
+tcgplayer.com##.promo-banner.delay-wrapper
+ign.com##.article-page > section.jsx-537794787
+spirehealthcare.com##.call-to-action--floatingButton
 blocknews.com##.theiaStickySidebar, .jnews_related_post_container
 whatsoftware.com##.commentlist, .comment-respond, .yarpp-related-website.yarpp-related.yarpp
 vocabulary.com##.vocab-trainer-background
@@ -66,7 +71,7 @@ howtogeek.com##.related-single, .sidebar-tabs, .sidebar-sticky, .article-footer-
 realnewsmichiana.com##.td_spot_img_all, .wpb_column.tdi_31.vc_column > .wpb_wrapper, .td-more-articles-box, .tdb-single-related-posts
 1010wcsi.com###secondary
 9anime.se##.header-group > .socials-group
-9to5google.com,9to5mac.com,9to5toys.com##.featured-items, .amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.i-amphtml-layout-size-defined.i-amphtml-layout-intrinsic.amp-wp-enforced-sizes, .amp-wp-7023da7, .bg-wht-alt.comments-area, .related-guides-container, .show-promo.visitor-promo, .google-news-link, .post-meta > .icon-twitter, .post-content.med.container > ul, .post-body > ul, .xs.container.sidebar
+9to5google.com,9to5mac.com,9to5toys.com##.top-comment, .featured-items, .amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.i-amphtml-layout-size-defined.i-amphtml-layout-intrinsic.amp-wp-enforced-sizes, .amp-wp-7023da7, .bg-wht-alt.comments-area, .related-guides-container, .show-promo.visitor-promo, .google-news-link, .post-meta > .icon-twitter, .post-content.med.container > ul, .post-body > ul, .xs.container.sidebar
 aa.com.tr##.detay-benzerHaberler.row, .donotprint.sticky-top
 abc7.com##.inner.headlines-list.top-stories
 abcnews.go.com##.Article__Column--sidebar.Article__Column, .Inline__Headline__Stack.InlineElement--desktop.InlineElement--content-width.InlineElement, .CalloutLink
@@ -772,6 +777,7 @@ delish.com##.video-player, .journey-unblur-content
 ! Comments not covered by other annoyances lists
 ||championat.com^$3p
 ||yotpo.com^$3p
+@@||staticw2.yotpo.com/assets/yotpo-widget-font
 ||lifehacker.com/embed/comments^$subdocument
 ||jetpack.wordpress.com/jetpack-comment/$subdocument
 ||cdn.commento.io^$3p
@@ -783,7 +789,11 @@ delish.com##.video-player, .journey-unblur-content
 ||images.cointelegraph.com/images/*_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS9zdG9yYWdlL3VwbG9hZHMvdmlldy9hNGFkNDk1ZmMwNGJkOTdmNzE2NDlhNDhkNjAwM2QwMC5wbmc=.png$image
 
 ! Chat modules
+||apexchat.net^$3p
 ||crisp.chat^$3p
+||customerly.io^$3p
+! ||chat.customerly.io^$3p
+! ||messenger.customerly.io^$3p
 ||eesysoft.com^$3p
 ||forum.kirupa.com/embed/comments$subdocument
 ||livechatinc.com^$3p
@@ -1019,6 +1029,12 @@ fandom.com##.wds-global-footer__main
 ! https://www.reddit.com/r/uBlockOrigin/comments/wpwuqu/how_can_i_hide_this_on_nyt_page/
 nytimes.com##.css-brw7hw, div[aria-labelledby="editorial-sub-messaging-header"]
 
+!!! WCO Fun streaming
+wcofun.net##.share-button
+wcofun.net##.jcarousel-wrapper
+wcofun.net##.episode-descp
+||www.wcostream.org/$image
+
 ! cig sites
 ##.col.cmp-footer__warnings
 
@@ -1032,12 +1048,11 @@ unsplash.com##img[src^="https://plus.unsplash.com/"]:upward(figure)
 ||takemyproctoringexam.com^
 ||onlineclasshero.com^
 
-! https://github.com/hagezi/dns-blocklists/issues/1238
-!@@||cdn.listrakbi.com/scripts/script.js^
-@@||cdn.listrakbi.com/scripts^$3p,script
-@@||services.listrak.com^
+! Mangapill
+! closed without explaination:
+! https://github.com/easylist/easylist/issues/16124
+mangapill.com##.mb-3.container > .justify-between.items-center.flex, div.container > .justify-between.items-center.flex
 
-!#if ext_ublock
 ! from https://github.com/Yuki2718/adblock2/blob/main/japanese/jpfp-ub.txt
 /^https:\/\/[a-z]{10,14}\.cam\/[%\*=\?_0-9a-zA-Z]{1000,}$/$xhr,3p
 /^https:\/\/[a-z]{10,14}\.casa\/tsk\/[\*_0-9a-zA-Z]{600,}$/$image,3p
@@ -1054,6 +1069,57 @@ unsplash.com##img[src^="https://plus.unsplash.com/"]:upward(figure)
 /^https?:\/\/[a-z]{5,6}\.com\/script\/bootstrap\.js$/$script,3p,match-case,domain=~edu|~gov|~jp
 /^https?:\/\/[a-z]{5,6}\.com\/script\/jquery\.js$/$script,3p,match-case,domain=~edu|~gov|~jp
 /^https?:\/\/[a-z]{5,6}\.com\/script\/pattern\.js$/$script,3p,match-case,domain=~edu|~gov|~jp
-!#endif
 
-!#include clean_reading_experience.txt
+! import Clean Reading Experience list
+9to5mac.com##p strong:has-text(/^Related/):upward(p)
+aljazeera.com##.more-on
+businessinsider.com##p > strong:has-text(/^Read More:/):upward(p)
+carscoops.com##p strong:has-text(/^Also/):upward(p)
+carscoops.com##p strong:has-text(/^Read/):upward(p)
+carscoops.com##p strong:has-text(/^Related/):upward(p)
+carscoops.com##p strong:has-text(/^See Also/):upward(p)
+cnn.com##.el__leafmedia--standard.el__leafmedia--factbox.el__leafmedia
+cnn.com##.zn-body__read-all > div.el__embedded--standard.el__embedded > .el__article--embed.el__storyelement--standard
+cnn.com##.l-container > .el__embedded--standard.el__embedded
+coindesk.com##i
+cointelegraph.com##p strong:has-text(/^Related/):upward(p)
+cointelegraph.com##p strong:has-text(/^Read/):upward(p)
+cryptonews.net##p strong:has-text(/^Related/):upward(p)
+crypto-news-flash.com##p strong:has-text(/^Related/):upward(p)
+crypto-news-flash.com##p strong:has-text(/^Also Read/):upward(p)
+entrepreneur.com##p strong:has-text(/^Related/):upward(p)
+fayobserver.com##p strong:has-text(/^More/):upward(p)
+fayobserver.com##p strong:has-text(/^Related/):upward(p)
+finbold.com##p strong:has-text(/^Related/):upward(p)
+ghacks.net##p strong:has-text(/^Now You/):upward(p)
+ghacks.net##p strong:has-text(/^Tip/):upward(p)
+hollywoodreporter.com##.u-margin-b-3\@desktop-xl.u-margin-t-4\@desktop-xl.u-margin-tb-250.\/\/.injected-related-story
+hollywoodreporter.com##p strong:has-text(/^PHOTOS/):upward(p)
+hollywoodreporter.com##p strong:has-text(/^STORY/):upward(p)
+mashable.com##.md\:leading-7.md\:text-xl.leading-loose.text-lg.mt-8.font-sans.max-w-3xl.mx-auto.w-full
+msnbc.com##.styles_hasItems__jrj_I.styles_msnbcDailyRecircBody__M8npG
+nbcnews.com##.dn-print.related
+nbcnews.com##p strong:has-text(/^Download the/):upward(p)
+newyorker.com##.ticker-wrapper.ticker-row.grid-items-0.grid-margins.grid
+people.com##p strong:has-text(/^RELATED/):upward(p)
+people.com##p strong:has-text(/^Want/):upward(p)
+people.com##p strong:has-text(/^Never/):upward(p)
+portswigger.net##[href="*"] > .bold, p.text-center, .bold.text-center
+time.com##p strong:has-text(/^Read more/):upward(p)
+techtimes.com##p strong:has-text(/^Also Read/):upward(p)
+techtimes.com##p strong:has-text(/^Read Also/):upward(p)
+theatlantic.com###injected-recirculation-link-2, #injected-recirculation-link-1, #injected-recirculation-link-0, #injected-recirculation-link-3, #injected-recirculation-link-4, #injected-recirculation-link-5, .ArticleMostPopular_root__PvMRH, .ArticleRelatedContentModule_notchedModule__aMW7_, .ArticleRelatedContentMagazine_root__O1NAf, .NonMeteredNudge_root__mBW5s, .SubOnlyPromo_root__ZC4ri
+theintercept.com##.InstreamPromo--promo.InstreamPromo
+theintercept.com##div.PromoteRelatedPost-promo:nth-of-type(6)
+theintercept.com##div.PromoteRelatedPost-promo:nth-of-type(12)
+theintercept.com##.PromoteRelatedPost-promo
+themuse.com##p strong:has-text(/^Read/):upward(p)
+thestreet.com##p strong:has-text(/^Learn how/):upward(p)
+theverge.com###kYgI66 > .c-read-more
+vox.com##.c-read-more
+vox.com##.c-article-footer
+wired.com##.callout--has-top-border.gYlOfh.GenericCalloutWrapper-zksK
+zdnet.com##p strong:has-text(/^SEE/):upward(p)
+zdnet.com##p strong:has-text(/^Also/):upward(p)
+
+!#include adult_annoyance_list.txt

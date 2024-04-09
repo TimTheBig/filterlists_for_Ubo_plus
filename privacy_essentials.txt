@@ -3,7 +3,7 @@
 ! Description: A curated list for advanced hardening. Minimize connections to third-party sites.
 ! Homepage: https://github.com/yokoffing/filterlists
 ! Expires: 4 day (update frequency)
-! Version: 2 January 2024
+! Version: 10 February 2024
 ! Syntax: AdBlock
 
 ! GENERAL BLOCKLIST
@@ -100,17 +100,15 @@ $ping
 ||deadlinefunnel.com^$3p
 ||decacopy.com^
 ||delvenetworks.com^$3p,script
-||discord.com^$3p,domain=~discohook.org|~scam.gay
-||discordapp.com^$3p,domain=~discohook.org|~discord.com|~discordpackage.com|~mee6.xyz|~scam.gay
 ||disqus.com^$3p
 ||disquscdn.com^$3p
 ||dmca.com^$3p
 ||dmgmediaprivacy.co.uk^$3p
 ||donorbox.org^$3p
 ||dowjoneson.com^$3p
-||dropbox-dns.com$domain=~dropbox.com
-||dropbox.com$domain=~dropbox.com
-||dropboxusercontent.com$domain=~dropbox.com
+||dropbox-dns.com$domain=~dropbox.com|~dropbox-dns.com
+||dropbox.com$domain=~dropbox.com|~dropbox-dns.com
+||dropboxusercontent.com$domain=~dropbox.com|~dropbox-dns.com
 ||drtuber.desi^$3p
 ||duckduckgo.com^$3p,domain=~duckduckgo.com|~spreadprivacy.com
 ||eagleapi.io^
@@ -328,6 +326,22 @@ fmovies.*##+js(nosiif, try)
 ! ||tags.tiqcdn.com^
 ||paykickstart.com^$3p
 ||pressplay.io^$3p
+||convertkit.com^$3p
+||grow.me^$3p
+||getgobot.com^$3p
+||twitcount.com^$3p
+||launchpotato.com^$3p
+||doctify.com^$3p
+! https://camerareadycosmetics.com/
+||minmaxify.com^$3p
+||pwztag.com^$3p
+||beacon.kendall.ai^$3p
+||orderdeadline.com^$3p
+||soundestlink.com^$3p
+||thimatic-apps.com^$3p
+||revenuehunt.com^$3p
+||omnisnippet1.com$3p
+||freegifts.io^$3p
 
 ! GENERAL ALLOWLIST
 ! https://github.com/crssi/Firefox/blob/master/uBO-Unbreak.txt
@@ -371,7 +385,7 @@ fmovies.*##+js(nosiif, try)
 ||firebaseinstallations.googleapis.com^
 ||google-analytics.com^$3p,important
 ||google.com/cse/cse.js^
-||google.com^$3p,domain=~abc.xyz|~blackdog.ie|~cbsnews.com|~chromium.org|~developer.android.com|~flippity.net|~gstatic.com|~gptgo.ai|~nest.com|~translate.google.com|~youtube-nocookie.com|~youtube.com|~youtube.googleapis.com
+||google.com^$3p,domain=~abc.xyz|~blackdog.ie|~cbsnews.com|~chromium.org|~developer.android.com|~flippity.net|~gstatic.com|~gptgo.ai|~nest.com|~oldgoogle.neocities.org|~translate.google.com|~youtube-nocookie.com|~youtube.com|~youtube.googleapis.com
 ||googleadservices.com^$3p,important
 ||googlesyndication.com^$important
 ||googletagmanager.com^$important
@@ -465,6 +479,11 @@ platform.twitter.com##+js(cookie-remover, /^/)
 
 ! TWITCH
 ||twitch.tv^$3p,domain=~twitch.tv
+
+! DISCORD
+@@||cdn.discordapp.com^$image
+||discord.com^$3p,domain=~discohook.org|~scam.gay
+||discordapp.com^$3p,domain=~discohook.org|~discord.com|~discordpackage.com|~mee6.xyz|~scam.gay
 
 ! 3rd-party Payment Vendors / "Buy Now, Pay Later":
 ||pay.google.com^$3p
