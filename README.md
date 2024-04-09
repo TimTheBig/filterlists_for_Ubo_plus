@@ -20,47 +20,79 @@
 ***
 
 ### Content
-1) [Custom Filters](https://github.com/yokoffing/filterlists#how-to-import-custom-filters-into-ublock-origin-ubo)
-    1) [Privacy](https://github.com/yokoffing/filterlists#privacy)
-    2) [Annoyances](https://github.com/yokoffing/filterlists#annoyances)
-    3) [Security](https://github.com/yokoffing/filterlists#security)
-    4) [All-Purpose](https://github.com/yokoffing/filterlists#all-purpose)
-2) [Setup Examples](https://github.com/yokoffing/filterlists#setup-examples)
-    1) [Enhanced](https://github.com/yokoffing/filterlists#enhanced)
-    2) [Pro](https://github.com/yokoffing/filterlists#pro)
-    3) [Optimized](https://github.com/yokoffing/filterlists#optimized)
-3) [Block Content with Fewer Rules](https://github.com/yokoffing/filterlists#block-content-with-fewer-rules)
-    1) [Selectively Disable Cosmetic Filters](https://github.com/yokoffing/filterlists#selectively-disable-cosmetic-filters)
-    2) [Optimized Lists](https://github.com/yokoffing/filterlists#optimized-lists)
-4) [Advanced Settings](https://github.com/yokoffing/filterlists/#advanced-settings)
-5) [FAQ](https://github.com/yokoffing/filterlists#faq)
-6) [Additional Reading](https://github.com/yokoffing/filterlists#reading)
-7) [Mentions](https://github.com/yokoffing/filterlists#mentions)
+1) [How To Add Custom Filters](https://github.com/yokoffing/filterlists?tab=readme-ov-file#how-to-add-custom-filters)
+    1) [Privacy](https://github.com/yokoffing/filterlists?tab=readme-ov-file#privacy)
+    2) [Annoyances](https://github.com/yokoffing/filterlists?tab=readme-ov-file#annoyances)
+    3) [Security](https://github.com/yokoffing/filterlists?tab=readme-ov-file#security)
+    4) [All-Purpose](https://github.com/yokoffing/filterlists?tab=readme-ov-file#all-purpose)
+2) [Setup Examples](https://github.com/yokoffing/filterlists?tab=readme-ov-file#setup-examples)
+    1) [Enhanced](https://github.com/yokoffing/filterlists?tab=readme-ov-file#enhanced)
+    2) [Pro](https://github.com/yokoffing/filterlists?tab=readme-ov-file#pro)
+    3) [Optimized](https://github.com/yokoffing/filterlists?tab=readme-ov-file#optimized)
+3) [Block Content with Fewer Rules](https://github.com/yokoffing/filterlists?tab=readme-ov-file#block-content-with-fewer-rules)
+    1) [Selectively Disable Cosmetic Filters](https://github.com/yokoffing/filterlists?tab=readme-ov-file#selectively-disable-cosmetic-filters)
+    2) [Optimized Lists](https://github.com/yokoffing/filterlists?tab=readme-ov-file#optimized-lists)
+4) [Advanced Settings](https://github.com/yokoffing/filterlists?tab=readme-ov-file#advanced-settings)
+5) [FAQ](https://github.com/yokoffing/filterlists?tab=readme-ov-file#faq)
+6) [Additional Reading](https://github.com/yokoffing/filterlists?tab=readme-ov-file#reading)
+7) [Mentions](https://github.com/yokoffing/filterlists?tab=readme-ov-file#mentions)
 
 ***
 
-# Custom Filters
+# How To Add Custom Filters
 
-#### How to import custom filters into uBlock Origin (uBO):
+### uBlock Origin
+[Get](https://ublockorigin.com/) uBlock Origin (uBO), if you don't have it already.
 
-1. Click **subscribe** by one of the lists below.
+To import custom filters into uBlock Origin:
+
+1. Click the **subscribe** link by one of the entries below.
 2. In the new tab that opens, click on **Subscribe** in the top right corner.
-3. Close tab.
-4. Repeat for other lists you want to add to uBO.
+3. Close tab, then repeat for other lists you want to add to uBO.
+
+:warning: This repo is tailored to uBlock Origin specifically. I cannot guarantee filters will work in other ad blockers. Do not open issues for other ad blockers.
+
+### AdGuard
+To import custom filters into AdGuard:
+
+1. Click the **subscribe** link by one of the entries below.
+2. In the new tab that opens, click on **Next**.
+3. Toggle the box that says **Trusted**, then click **Subscribe**.
+
+### AdBlock Plus
+To import custom filters into Adblock Plus:
+
+1. Click the **subscribe** link by one of the entries below.
+2. In the new tab that opens, select **Yes, Add This Filter List**.
+
+### AdBlock
+To import custom filters into AdBlock:
+1. Click the **subscribe** link by one of the entries below.
+2. In the dialog box that pops up, press **OK**.
+
+### Other ad blockers
+**Do not use the subscribe link.** Instead, do the following:
+
+1. Click on the title of the list from the selections below.
+2. In GitHub, click `Raw` on the right-hand side of the page.
+3. Copy+paste the URL to your preferred ad blocker.
+4. Follow your ad blocker's instructions for adding custom lists.
 
 ***
 
 ## Privacy
 
+1) :star: [**Privacy Essentials**](https://github.com/yokoffing/filterlists/blob/main/privacy_essentials.txt) (1k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt&title=privacy%20essentials)
+<br> A curated list for advanced hardening. Includes [click2load](https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt) filters<sup>*[^what is this?](https://twitter.com/gorhill/status/1377613392559636486)*</sup> and blocks requests like `connect.facebook.com` and more that are [not covered](https://github.com/gorhill/uBlock/wiki/uBlock-and-others:-Blocking-ads,-trackers,-malwares#observations) by uBO's default settings or in Annoyance lists. :warning: This list may break third-party logins.
 
-1) :star: [**Hagezi's Personal DNS Blocklist**](https://github.com/hagezi/dns-blocklists/blob/main/adblock/personal.txt) (48k domains) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/personal.txt&title=Hagezi%20Personal%20DNS%20Blocklist)
-<br> Hagezi's manually maintained blocklist includes ad and tracker domains seen on the top website lists (Umbrella/Tranco/Statvoo) and extracted domains from his DNS wildcard rules. This is the core of Hagezi’s five primary DNS blocklists, which are much larger and more appropriate for DNS-level blocking.
+2) [**yokoffing's click2load filters**](https://github.com/yokoffing/filterlists/blob/main/click2load.txt) (47 rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt&title=yokoffing%20click2load%20filters)
+<br> (**optional** if using `Privacy Essentials`) Turns many third-party audio and video players into [click-to-load](https://twitter.com/gorhill/status/1377613404794421258) placeholders which only load once a user clicks on it. This list speeds up page load, uses less bandwidth and browser resources, and reduces privacy exposure (by contacting fewer domains during page load). The player will load by clicking on the placeholder.
 
-2) [**Privacy Essentials**](https://github.com/yokoffing/filterlists/blob/main/privacy_essentials.txt) (1k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt&title=privacy%20essentials)
-<br> A curated list for advanced hardening. Includes [click2load](https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt) filters<sup>*[^what is this?](https://nitter.cz/gorhill/status/1377613392559636486)*</sup> and blocks requests like `connect.facebook.com` and more that are [not covered](https://github.com/gorhill/uBlock/wiki/uBlock-and-others:-Blocking-ads,-trackers,-malwares#observations) by uBO's default settings or in Annoyance lists. :warning: This list may break third-party logins!
+3) :star: [**Hagezi's Pro++ Mini List**](https://github.com/hagezi/dns-blocklists/blob/main/adblock/pro.plus.mini.txt) (88k domains) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.mini.txt&title=Hagezi%20Pro%20Plus%20Mini)
+<br> Hagezi's [Pro++ DNS List](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#proplus) inspired the creation of a mini version optimized for web browsers. This streamlined list omits rules unrelated to web surfing, such as those blocking IoT tracking and device telemetry. Although derived from an all-purpose DNS blocklist, the mini version focuses exclusively on blocking domains associated with ads, tracking, analytics, and badware. [read more](https://github.com/hagezi/dns-blocklists/issues/2346)
 
-3) :star: [**yokoffing's click2load filters**](https://github.com/yokoffing/filterlists/blob/main/click2load.txt) (47 rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt&title=yokoffing%20click2load%20filters)
-<br> (**optional:** included in `Privacy Essentials`) Turns many third-party audio and video players into [click-to-load](https://nitter.cz/gorhill/status/1377613404794421258) placeholders which only load once a user clicks on it. This list speeds up page load, uses less bandwidth and browser resources, and reduces privacy exposure (by contacting fewer domains during page load). The player will load by clicking on the placeholder.
+4) [**Hagezi's Light DNS Blocklist**](https://github.com/hagezi/dns-blocklists/blob/main/adblock/light.txt) (56k domains) | [subscribe](https://subscribe.adblockplus.org/?location=https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt&title=Hagezi%20Light%20DNS%20Blocklist)
+<br> Hagezi's blocklist includes ad and tracker domains seen on the top website lists (Umbrella, Cloudflare, Tranco, Majestic, etc.) and extracted domains from DNS wildcard rules. This is the core of Hagezi’s other primary DNS blocklists, which are much larger and more appropriate for DNS-level blocking.
 
 ### URL Tracking Parameters
 
@@ -127,7 +159,7 @@ I've provided three setup guides: **Enhanced**, **Pro**, and **Optimized**.
 * Demonstrates the power of uBO
 * Blocks most cookie pop-ups, site notifications, and anti-adblock notices
 * Adds additional privacy protections against URL tracking and third-party domains
-* Adds security protections from known badware domains (optional)
+* Adds security protections from known badware domains
 * You have a low threshold for site breakage
 
 #### Built-in lists
@@ -138,10 +170,10 @@ In addition to the default lists, you should also enable:
 4. uBlock filters - Annoyances (anti-adblock messages)
 
 #### Custom lists
-1. Hagezi's Personal DNS Blocklist
+1. Hagezi's Light DNS Blocklist
 2. yokoffing's click2load filters
 3. Actually Legitimate URL Shortener Tool
-4. The [Security lists](https://github.com/yokoffing/filterlists#security) (if you browse high-risk categories like torrents, piracy, and third-party streaming sites, or want more peace of mind, etc.)
+4. The [Security lists](https://github.com/yokoffing/filterlists?tab=readme-ov-file#security) (if you browse high-risk categories like torrents, piracy, and third-party streaming sites, or want more peace of mind, etc.)
 
 ***
 
@@ -156,17 +188,18 @@ In addition to the default lists, you should also enable:
 
 #### Built-in lists
 In addition to the default lists, you should also enable:
-1. Block Outsider Instrusion into LAN
-2. AdGuard – Popup Overlays (newsletter pop-ups)
-3. EasyList - Annoyances (all lists)
-4. uBlock filters - Annoyances
+1. AdGuard Tracking Protection (which is [purposed for uBO](https://filters.adtidy.org/extension/ublock/filters/3.txt))
+2. Block Outsider Instrusion into LAN (optional)
+3. AdGuard – Popup Overlays (newsletter pop-ups)
+4. EasyList - Annoyances (all lists)
+5. uBlock filters - Annoyances
 
 #### Custom lists
 1. Privacy Essentials
-2. Hagezi's Personal DNS Blocklist
+2. Hagezi's Pro++ Mini List
 3. Actually Legitimate URL Shortener Tool
-4. yokoffing's Annoyance List (+ any of the other [Annoyance lists](https://github.com/yokoffing/filterlists#annoyances))
-5. Most Abused TLDs
+4. yokoffing's Annoyance List (+ any of the other [Annoyance lists](https://github.com/yokoffing/filterlists?tab=readme-ov-file#annoyances))
+5. Most Abused TLDs (optional)
 
 ***
 
@@ -195,26 +228,37 @@ uBO can handle 300k+ filters, but you might not need that many rules to block un
 
 [AdGuard](https://github.com/AdguardTeam) provides filters that are [optimized](https://github.com/AdguardTeam/FiltersRegistry#filters-optimization) by removing rules that are rarely used. These lists are designed to be lighter and faster but still maintain high standards for content blocking. The optimization process relies on the [statistics](https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics) of how often AdGuard users apply different rules, which they opt-in to share.
 
-*The rule counts shown below are when compared to their original list in uBO.*
+*The rule counts shown below are when compared to their original list in uBO. I've also supplied the link to the iOS versions for reference, but you won't need them running the AdGuard extension for Safari.*
 
 ### Ads
 
-1) **[Easylist (Optimized)](https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt)** (24k vs. 67k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt&title=Easylist%20(Optimized))
-<br> EasyList is the primary filter list that removes most adverts from web pages, including unwanted frames, images, and objects. It is the most popular list used by many ad blockers.
+1) **[Easylist (Optimized)](https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt)** (45k optimized vs. 82k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt&title=Easylist%20(Optimized))
+<br> EasyList is the primary filter list that removes most adverts from web pages, including unwanted frames, images, and objects. This filter is the most popular list used by many ad blockers. [iOS version](https://filters.adtidy.org/ios/filters/101_optimized.txt) (28k rules)
 
-2) **[EasyList + AdGuard Base filter (Optimized)](https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt)** (64k vs. 137k rules combined) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt&title=AdGuard%20Base%20filter%20%2B%20EasyList%20(Optimized))
-<br> If Easylist (Optimized) is missing too many ads, then use this list, or stick with the built-in Easylist filter.
+2) **[EasyList + AdGuard Base filter (Optimized)](https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt)** (73k optimized  vs. 153k rules combined) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt&title=AdGuard%20Base%20filter%20%2B%20EasyList%20(Optimized))
+<br> If Easylist (Optimized) is missing too many ads, then use this list, or stick with the built-in Easylist filter. [iOS version](https://filters.adtidy.org/ios/filters/2_optimized.txt) (34k rules)
+
+3) **[AdGuard Mobile Ads filter](https://filters.adtidy.org/extension/ublock/filters/11.txt)** (9k rules optimized) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/11.txt&title=AdGuard%20Mobile%20Ads%20)
+<br> (**optional:** This filter is enabled by default when using uBO on Firefox for Android. It's an option in uBO under the category of **Ads**.) [iOS version](https://filters.adtidy.org/ios/filters/11_optimized.txt) (6k rules)
+
+### Privacy
+
+1. **[AdGuard Tracking Protection (Optimized)](https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt)** (both use 100k rules; optimized removes comment lines `!`) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt&title=AdGuard%20Tracking%20Protection%20(Optimized)%20)
+<br> A comprehensive list of various online counters and web analytics tools. [iOS version](https://filters.adtidy.org/ios/filters/3_optimized.txt) (44k rules)
+
+3. **[EasyPrivacy (Optimized)](https://filters.adtidy.org/extension/ublock/filters/118_optimized.txt)** (14k optimized vs. 50k rules)
+<br> EasyPrivacy is a filter list to comprehensively block tracking on web pages, including tracking scripts and information collectors. EasyPrivacy protects personal data by stopping these trackers. This filter is the second most popular list used by many ad blockers. [iOS version](https://filters.adtidy.org/ios/filters/118_optimized.txt) (14k rules)
 
 ### Annoyances
 
-1) **[Fanboy Annoyances (Optimized)](https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt)** (35k vs. 91k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt&title=Fanboy%20Annoyances%20(Optimized))
-<br> Hides website notifications, social media widgets, cookie notices, chat widgets, and some newsletters, thereby substantially decreasing web page loading times and uncluttering them. (Includes `EasyList - Cookie Notices` and `EasyList - Social Widgets`)
+1) **[Fanboy Annoyances (Optimized)](https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt)** (56k optimized vs. 81k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt&title=Fanboy%20Annoyances%20(Optimized))
+<br> Hides website notifications, social media widgets, cookie notices, chat widgets, and some newsletters, thereby substantially decreasing web page loading times and uncluttering them. Includes `EasyList - Cookie Notices` and `EasyList - Social Widgets`.  [iOS version](https://filters.adtidy.org/ios/filters/122_optimized.txt) (11k rules)
 
-2) **[AdGuard Annoyances (Optimized)](https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt)** (40k vs. 68k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt&title=AdGuard%20Annoyances%20(Optimized))
-<br> Blocks irritating elements on webpages including cookie notices, third-party widgets, and in-page popups. AdGuard claims that this list doesn't duplicate `Fanboy Annoyances`, so you can use them both together. (Unlike Fanboy's version, this list doesn’t include social media widgets and buttons. To block them, you can use `AdGuard Social Media filter` separately.)
+2) **[AdGuard Annoyances (Optimized)](https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt)** (44k optimized vs. 61k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt&title=AdGuard%20Annoyances%20(Optimized))
+<br> Blocks irritating elements on webpages including cookie notices, third-party widgets, and in-page popups. AdGuard claims that this list doesn't duplicate `Fanboy Annoyances`, so you can use them both together. (AFAIK, it is still the case that, unlike Fanboy's version, this list doesn’t include social media widgets and buttons. To block them, you can use `AdGuard Social Media filter` separately.) [iOS version](https://filters.adtidy.org/ios/filters/14_optimized.txt) (24k rules)
 
-3) **[AdGuard Social Media filter (Optimized)](https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt)** (14k vs. 20k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt&title=AdGuard%20Social%20Media%20filter%20(Optimized))
-<br> (**optional:** Redundant with `Fanboy Annoyances` / `EasyList - Social Widgets`, in my opinion) If you do not like numerous `Like` and `Tweet` buttons on all the popular websites on the Internet, then subscribe to this filter and you will not see them anymore.
+3) **[AdGuard Social Media filter (Optimized)](https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt)** (16k optimized vs. 21k rules) | [subscribe](https://subscribe.adblockplus.org/?location=https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt&title=AdGuard%20Social%20Media%20filter%20(Optimized))
+<br> (**optional:** Redundant with `Fanboy Annoyances` / `EasyList - Social Widgets`, in my opinion) If you do not like numerous `Like` and `Tweet` buttons on all the popular websites on the Internet, then subscribe to this filter and you will not see them anymore. [iOS version](https://filters.adtidy.org/ios/filters/4_optimized.txt) (7k rules)
 
 ***
 
@@ -246,7 +290,7 @@ Toggle on [advanced settings](https://github.com/gorhill/uBlock/wiki/Advanced-us
 uBlock Origin can [do more](https://github.com/gorhill/uBlock/wiki/About-%22Why-uBlock-Origin-works-so-much-better-than-Pi%E2%80%91hole-does%3F%22) compared to when only blocking requests at the DNS-level, like using [cosmetic filters](https://github.com/gorhill/uBlock/wiki/Does-uBlock-Origin-block-ads-or-just-hide-them%3F#cosmetic-filters) to hide first-party ads (e.g., [YouTube ads](https://discourse.pi-hole.net/t/how-do-i-block-ads-on-youtube/253)), [ad-placeholders](https://www.dslreports.com/forum/r33005057-How-to-block-the-spaces-taken-up-by-blocked-ads), web [annoyances]((https://reddit.com/r/nextdns/comments/t8qn8c/comment/hzqrrfa/?context=3)), etc.<sup>[1](https://help.nextdns.io/t/x2hzbps/using-nextdns-why-is-ublock-origin-still-catching-lots-of-ads)</sup>
 
 ### Why should I use these lists?
-See [here](https://how-i-experience-web-today.com/).
+Check out [How I Experience the Web Today](https://how-i-experience-web-today.com/).
 
 ### Why did you include AdGuard's Optimize lists but not AdBlock Plus' Minified lists?
 The Minified lists are part of an Adblock Plus-hosted unofficial project that was hardforked from their source lists in August 2019. They are smaller than AdGuard's Optimized lists but lack quality blocking. Because EL and EP are your primary defenses with content blocking, I wouldn't use the Minified lists.

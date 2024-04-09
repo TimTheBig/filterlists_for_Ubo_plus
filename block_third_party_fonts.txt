@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
 ! Title: 🔍 Block third party fonts
-! Description: Block most third-party fonts
+! Description: Block most third-party fonts. Allows for Material Icons and WOFF fonts in order to not break sites.
 ! Homepage: https://github.com/yokoffing/filterlists
 ! Expires: 4 days (update frequency)
-! Version: 26 February 2024
+! Version: 24 March 2024
 ! Syntax: AdBlock
 
 !!! ALLOWLIST
@@ -11,8 +11,8 @@
 @@||googleapis.com/ajax/libs/webfont/$domain=typepad.com
 ! @@||cloudfront.net^$font,domain=noip.com|phabricator.services.mozilla.com|securelist.com|status.proton.me
 @@||fast.fonts.net/jsapi/$script
-@@||fonts.googleapis.com$domain=abc.xyz|google.com|blog.google|blogger.com|chromium.org|gaggle.fun|googlesource.com|grow.google|groq.com|reedsy.com|reliaslearning.com|socialworkers.org|googleapps.com|vocabulary.com|web.dev|youtube.com
-@@||fonts.gstatic.com$domain=about.google|ai.google|bloble.io|blog.google|blogger.com|cenreader.com|chrome.com|chromium.org|dexscreener.com|google.com|domains.google|googlesource.com|grow.google|groq.com|material.io|reedsy.com|reliaslearning.com|safety.google|socialworkers.org|toolbox.googleapps.com|vocabulary.com|web.dev|youtube.com
+@@||fonts.googleapis.com$domain=abc.xyz|google.com|blog.google|blogger.com|chromium.org|freetaxusa.com|fmoviesz.to|gaggle.fun|googlesource.com|grow.google|groq.com|myeducator.com|reedsy.com|reliaslearning.com|socialworkers.org|googleapps.com|vocabulary.com|web.dev|youtube.com
+@@||fonts.gstatic.com$domain=about.google|ai.google|bloble.io|blog.google|blogger.com|cenreader.com|chrome.com|chromium.org|dexscreener.com|google.com|domains.google|googlesource.com|grow.google|groq.com|material.io|myeducator.com|reedsy.com|reliaslearning.com|safety.google|socialworkers.org|toolbox.googleapps.com|vocabulary.com|web.dev|youtube.com
 @@||googleusercontent.com/static/fonts/$domain=tudocelular.com
 @@||myfonts.net$domain=myfonts.com
 @@||typekit.com$font
@@ -43,6 +43,7 @@
 ! Privacy-friendly drop-in replacement for Google Fonts
 ! [1] https://fonts.coollabs.io/
 @@||cdn.coollabs.io/fonts^
+@@||api.fonts.coollabs.io^
 
 !!! DENYLIST
 /cdn-cgi/pe/bag2?*googleapis.com*webfont.js
@@ -52,12 +53,10 @@
 ||bootstrapcdn.com/bootstrap/$font,3p
 ||cloud.typography.com^$3p
 ||cloud.webtype.com^$font,3p
-! ||cloudfront.net^$font,3p
 ||disquscdn.com/next/assets/font/$3p
 ||edgefonts.net^$3p
 ||fast.fonts.com^$3p
 ||fast.fonts.net^$3p
-! ||fastly.net^$font,3p
 ||fontdeck.com^$3p
 ||fonts.advance.net^$3p
 ||fonts.bauernet.me^
@@ -100,20 +99,13 @@
 ! @@||use.typekit.net^$font,badfilter
 
 !!! UNUSED
-! Causes too many false positives:
-!*$font,3p
+! Breaks too many sites:
+!||cloudfront.net^$font,3p
+!||fastly.net^$font,3p
+!$font,3p
 !/fonts/*.ttf$font,3p
 !||maxcdn.bootstrapcdn.com/font-awesome/$3p
 !||maxcdn.bootstrapcdn.com^*/fonts/
-
-! Used for icons on many sites:
-!@@/fontawesome-$font,3p,domain=fontawesome.com
-!@@/wp-$font,domain=arstechnica.com|themindfulnessclinic.ca
-!@@||cdnjs.cloudflare.com/ajax/libs/font-awesome^$domain=9anime.to
-!@@||fontawesome.com^
-!/font-awesome^$3p
-!/fontawesome-$font,3p
-!/fontawesome-webfont
 !/wp-$font,3p
 !||cdnjs.cloudflare.com/ajax/libs/font-awesome^$3p
 !||fontawesome.com^$3p

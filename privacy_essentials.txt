@@ -3,7 +3,7 @@
 ! Description: A curated list for advanced hardening. Minimize connections to third-party sites.
 ! Homepage: https://github.com/yokoffing/filterlists
 ! Expires: 4 day (update frequency)
-! Version: 10 February 2024
+! Version: 29 March 2024
 ! Syntax: AdBlock
 
 ! GENERAL BLOCKLIST
@@ -15,6 +15,8 @@ $ping
 /fingerprintjs2$script
 /fp.js$script
 /loginmanager_sniff.js$script
+! ||dailykarma.io^$3p
+||assets.dailykarma.io^$3p
 ||0dcde44a41.com^
 ||1105media.com^$3p
 ||2mdn.net^$3p
@@ -76,12 +78,14 @@ $ping
 ||capturehighered.net^$3p
 ||cbox.ws^$3p
 ||cbsinteractive.com^$domain=~etonline.com
+||cdn.privacy.paramount.com^$3p
 ||cdn.ravenjs.com^$3p,script
 ||channelsight.com^$xhr
 ||chatango.com^$3p
 ||chatbro.com^$3p
 ||chimpstatic.com^$3p
 ||christianbook.com^$3p
+||cigevo.uno^$3p
 ||cleantalk.org^
 ||cloudinary.com^$3p,~image
 ||cnstrc.com^
@@ -108,7 +112,7 @@ $ping
 ||dowjoneson.com^$3p
 ||dropbox-dns.com$domain=~dropbox.com|~dropbox-dns.com
 ||dropbox.com$domain=~dropbox.com|~dropbox-dns.com
-||dropboxusercontent.com$domain=~dropbox.com|~dropbox-dns.com
+! ||dropboxusercontent.com$domain=~dropbox.com|~dropbox-dns.com|~uniquestream.net
 ||drtuber.desi^$3p
 ||duckduckgo.com^$3p,domain=~duckduckgo.com|~spreadprivacy.com
 ||eagleapi.io^
@@ -342,6 +346,14 @@ fmovies.*##+js(nosiif, try)
 ||revenuehunt.com^$3p
 ||omnisnippet1.com$3p
 ||freegifts.io^$3p
+! https://www.vitalydesign.com/pages/contact-us
+||ip-api.com^$3p
+||marker.io^$3p
+||shoplift.ai$3p
+! Shopify
+||juniphq.com^$3p
+||postscript.io^$3p
+||shoplift.ai$3p
 
 ! GENERAL ALLOWLIST
 ! https://github.com/crssi/Firefox/blob/master/uBO-Unbreak.txt
@@ -486,6 +498,10 @@ platform.twitter.com##+js(cookie-remover, /^/)
 ||discordapp.com^$3p,domain=~discohook.org|~discord.com|~discordpackage.com|~mee6.xyz|~scam.gay
 
 ! 3rd-party Payment Vendors / "Buy Now, Pay Later":
+||global-e.com^$3p
+||static.rechargecdn.com^$3p
+! ||getcatch.com^$3p
+||js.getcatch.com^$3p
 ||pay.google.com^$3p
 ||appleid.cdn-apple.com^
 ||payments-amazon.com^$3p
